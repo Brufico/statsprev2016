@@ -1,0 +1,45 @@
+---
+title: "Programmatically constructed equations"
+author: "Bruno Fischer Colonimos"
+date: "2 octobre 2016"
+output:
+  pdf_document:
+    latex_engine: lualatex
+    number_sections: yes
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Programmatically constructed equations
+
+Equation chunk:
+```{r equa}
+cf <- c(10,20,30)
+eq0 <- paste0("$" , "\\textbf{Ventes} = ", cf[1] , " + " , cf[2] ," \\cdot ", "\\textbf{prixproduit}", " + " ,
+cf[3] , " \\cdot ", "\\textbf{prixproduiconcurrent}", "$")
+eq0
+
+eq1 <- paste0("$$" , "\\textbf{Ventes} = ", cf[1] , " + " , cf[2] ," \\cdot", "\\textbf{prixproduit}", " + " ,
+cf[3] , " \\cdot ", "\\textbf{prixproduitconcurrent}", "$$")
+eq1
+
+eq2 <- paste0("$" , "Ventes = ", cf[1] , " + " , cf[2] ," \\cdot ", "prixproduit", " + " ,
+cf[3] , " \\cdot ", "prixproduit.concurrent", "$")
+eq2
+
+eq3 <- paste0("$" , "Ventes = ", cf[1] , " \\cdot ", "prixproduit", "^{", cf[2] , "}" ,
+ " \\cdot ", "prixproduitconcurrent",  "^{",cf[3] , "}" ,"$")
+eq3
+
+```
+
+Equation0: `r eq0`
+
+Equation1: `r eq1`
+
+Equation2: `r eq2`
+
+Equation2: `r eq3`
